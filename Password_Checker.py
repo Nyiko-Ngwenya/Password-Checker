@@ -11,15 +11,15 @@ def password_is_valid(password):
                     if pattern.search(password):
                         return True 
                     else:
-                        return False
+                        raise Exception
                 else:
-                    return False
+                    return Exception
             else:
-                return False
+                return Exception
         else:
-            return False
+            return Exception
     else:
-        return False
+        return Exception
     
 def password_is_ok(password):
     ok_count = 0
