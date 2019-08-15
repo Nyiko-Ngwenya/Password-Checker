@@ -11,24 +11,20 @@ def password_is_valid(password):
                     if pattern.search(password):
                         return True 
                     else:
-                        raise Exception
+                        raise Exception('Password doesnt contain a number')
                 else:
-                    return Exception
+                    return Exception('Password doesnt contain a capital letter')
             else:
-                return Exception
+                return Exception('Password doesnt contain a small letter')
         else:
-            return Exception
+            return Exception('Password is not longer than 8 characters')
     else:
-        return Exception
+        return Exception('Password is null')
     
 def password_is_ok(password):
     ok_count = 0
-    if password is not None :
-        ok_count+=1
-    else:
-        return False
-    if len(password) > 8:
-        ok_count+=1
+    if password is not None and  len(password) > 8:
+        ok_count+=2
     else:
         return False
     pattern = re.compile(r'[a-z]')
